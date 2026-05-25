@@ -70,25 +70,31 @@ export default async function ProjectPage({ params }: Props) {
 
 
 
-        {/* VIDEOS */}
-        {project.videos && project.videos.length > 0 && (
-          <div className="mb-20 space-y-8">
+       {/* VIDEOS */}
+{project.videos && project.videos.length > 0 && (
+  <div className="mb-20 space-y-8">
+    <h2 className="text-3xl font-bold text-white">
+      Demo Videos
+    </h2>
 
-            <h2 className="text-3xl font-bold text-white">
-              Demo Videos
-            </h2>
+    <div className="grid gap-8">
+      {project.videos.map((video, index) => (
+        <div
+          key={index}
+          className="overflow-hidden rounded-3xl border border-white/10"
+        >
+          <iframe
+            src={video}
+            title={`Project Video ${index + 1}`}
+            className="aspect-video w-full"
+            allowFullScreen
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
-            {project.videos.map((video, index) => (
-              <video
-                key={index}
-                controls
-                className="w-full rounded-3xl border border-white/10"
-              >
-                <source src={video} type="video/mp4" />
-              </video>
-            ))}
-          </div>
-        )}
 
         {/* TECH STACK */}
         <div className="mb-20 flex flex-wrap gap-4">
