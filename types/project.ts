@@ -1,26 +1,22 @@
-export type Project = {
-  id: string
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
 
-  title: string
+  businessObjective?: string;
 
-  description: string
+  highlights: string[];
 
-  businessObjective?: string
+  image?: string;
 
-  highlights: string[]
+  images?: string[];
 
-  image?: string
+  videos?: string[];
 
-  images: string[]
-  
+  github: string;
 
+  liveUrl?: string;
 
-  videos?: string[]
-
-  github: string
-
-  liveUrl?: string
-
-  technologies: string[]
+  technologies: string[];
 }
 
